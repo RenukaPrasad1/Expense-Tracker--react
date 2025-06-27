@@ -23,16 +23,19 @@ const ExpenseList = () => {
   }, []);
 
   return (
-    <div>
-      <h3 className="text-xl font-bold">Expenses</h3>
-      <ul className="space-y-1">
-        {expenses.map((exp) => (
-          <li key={exp._id} className="border p-2">
-            ₹{exp.amount} - {exp.category} - {new Date(exp.date).toLocaleDateString()}
-          </li>
-        ))}
-      </ul>
-    </div>
+    <div className="bg-white border rounded-xl p-6 shadow-md">
+  <h3 className="text-lg font-bold text-gray-800 mb-4 text-center">Expense History</h3>
+  <ul className="space-y-3">
+    {expenses.map((exp) => (
+      <li key={exp._id} className="border p-3 rounded-md bg-gray-50">
+        <p className="text-sm text-gray-700 font-medium">{exp.category} - ₹{exp.amount}</p>
+        <p className="text-xs text-gray-500">{exp.description}</p>
+        <p className="text-xs text-gray-400">{new Date(exp.date).toLocaleDateString()}</p>
+      </li>
+    ))}
+  </ul>
+</div>
+
   );
 };
 

@@ -6,8 +6,8 @@ const ExpenseSummary = () => {
 
   useEffect(() => {
     const fetchSummary = async () => {
-      const res = await API.get("/expenses/summary");
-      setSummary(res.data);
+      // const res = await API.get("/expenses/summary");
+      // setSummary(res.data);
     };
     fetchSummary();
   }, []);
@@ -16,7 +16,9 @@ const ExpenseSummary = () => {
     <div>
       <h3 className="text-xl font-bold">Summary by Category</h3>
       {Object.entries(summary).map(([cat, total]) => (
-        <p key={cat}>{cat}: ₹{total}</p>
+        <p key={cat}>
+          {cat}: ₹{total}
+        </p>
       ))}
     </div>
   );

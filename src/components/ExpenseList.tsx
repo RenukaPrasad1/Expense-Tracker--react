@@ -14,8 +14,8 @@ const ExpenseList = () => {
   const [expenses, setExpenses] = useState<Expense[]>([]);
 
   const fetchExpenses = async () => {
-    const res = await API.get("/expenses/");
-    setExpenses(res.data);
+    // const res = await API.get("/expenses/");
+    // setExpenses(res.data);
   };
 
   useEffect(() => {
@@ -28,7 +28,8 @@ const ExpenseList = () => {
       <ul className="space-y-1">
         {expenses.map((exp) => (
           <li key={exp._id} className="border p-2">
-            ₹{exp.amount} - {exp.category} - {new Date(exp.date).toLocaleDateString()}
+            ₹{exp.amount} - {exp.category} -{" "}
+            {new Date(exp.date).toLocaleDateString()}
           </li>
         ))}
       </ul>

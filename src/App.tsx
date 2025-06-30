@@ -6,7 +6,6 @@ import { useAuth } from "./context/AuthContext";
 
 const App = () => {
   const { isAuthenticated } = useAuth();
-  console.log(isAuthenticated);
   return (
     <BrowserRouter>
       <Routes>
